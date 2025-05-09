@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <!-- 黑色背景 -->
-  <rect x="0" y="0" width="200" height="200" fill="#1A1C22"/>
+<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect x="0" y="0" width="200" height="160" fill="#2c3e50"/>
   
-  <!-- 圆角矩形边框 -->
-  <rect x="20" y="20" width="160" height="160" rx="15" ry="15" 
-        fill="none" stroke="#A0A59E" stroke-width="6"/>
+  <!-- Rounded rectangle border -->
+  <rect x="20" y="20" width="160" height="120" rx="15" ry="15" 
+        fill="none" stroke="#8F9CAA" stroke-width="6"/>
   
-  <!-- 左眼 (X) -->
-  <line x1="60" y1="60" x2="80" y2="80" stroke="#A0A59E" stroke-width="6" stroke-linecap="round"/>
-  <line x1="80" y1="60" x2="60" y2="80" stroke="#A0A59E" stroke-width="6" stroke-linecap="round"/>
+  <!-- Left eye (X) -->
+  <line x1="60" y1="50" x2="80" y2="70" stroke="#8F9CAA" stroke-width="6" stroke-linecap="round"/>
+  <line x1="80" y1="50" x2="60" y2="70" stroke="#8F9CAA" stroke-width="6" stroke-linecap="round"/>
   
-  <!-- 右眼 (O) -->
-  <circle cx="130" cy="70" r="15" fill="none" stroke="#A0A59E" stroke-width="6"/>
+  <!-- Right eye (O) -->
+  <circle cx="130" cy="60" r="15" fill="none" stroke="#8F9CAA" stroke-width="6"/>
   
-  <!-- 悲伤的嘴 -->
-  <path d="M70 130 Q100 110 130 130" fill="none" stroke="#A0A59E" stroke-width="6" stroke-linecap="round"/>
+  <!-- Sad mouth -->
+  <path d="M70 110 Q100 90 130 110" fill="none" stroke="#8F9CAA" stroke-width="6" stroke-linecap="round"/>
 </svg> 
