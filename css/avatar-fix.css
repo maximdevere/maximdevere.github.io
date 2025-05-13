@@ -1,0 +1,34 @@
+/* 强制头像样式 */
+.avatar-img {
+  border-radius: 50% !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: all 0.5s !important;
+}
+
+.info-avatar {
+  width: 110px !important;
+  height: 110px !important;
+  position: relative !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+  transition: all 0.5s !important;
+}
+
+/* 强制清除缓存的技巧 */
+img[src*="redefine-avatar.svg"] {
+  content: url("/images/redefine-avatar.svg?v=3") !important;
+}
+
+/* 强制所有可能的类名 */
+.avatar-img[src*="redefine-avatar.svg"],
+.redefine-avatar,
+.avatar,
+.avatar-image,
+img[alt="avatar"] {
+  content: url("/images/redefine-avatar.svg?v=3") !important;
+} 

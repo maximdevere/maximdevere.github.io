@@ -1,0 +1,153 @@
+/* 隐藏默认光标当使用自定义光标时 */
+body:has(.custom-cursor) {
+  cursor: none !important;
+}
+
+/* 为滚动动画添加初始状态 */
+.home-article-item[data-swup-animation] {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* 翻转卡片的3D效果 */
+.home-article-item {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* 添加鼠标悬停时的辉光效果 */
+.home-article-item:hover::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #24c6dc, #514a9d);
+  z-index: -1;
+  opacity: 0.2;
+  filter: blur(15px);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.2;
+    filter: blur(15px);
+  }
+  100% {
+    opacity: 0.3;
+    filter: blur(20px);
+  }
+}
+
+/* 文章标题悬停效果 */
+.home-article-title:hover {
+  animation: textShadow 1.5s infinite alternate;
+}
+
+@keyframes textShadow {
+  0% {
+    text-shadow: 0 0 5px rgba(36, 198, 220, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(81, 74, 157, 0.5);
+  }
+}
+
+/* 自定义CSS样式，仿照RayAlto的博客风格 */
+
+/* 首页banner相关样式 */
+.home-banner-container {
+  background: transparent !important;
+}
+
+.home-article-item,
+.right-bottom-tools,
+.sidebar-content,
+.sidebar-links,
+.sidebar-links .links:hover,
+a.extend,
+a.page-number,
+footer.footer {
+  background-color: var(--background-color-transparent-80) !important;
+}
+
+.right-bottom-tools:hover,
+a.extend:hover,
+a.page-number:hover {
+  background-color: var(--primary-color) !important;
+}
+
+.home-article-sticky-label,
+.site-info {
+  background-color: var(--background-color-transparent-15) !important;
+}
+
+.home-article-sticky-label {
+  backdrop-filter: none !important;
+}
+
+/* 导航栏底部箭头样式 */
+.fa-arrow-down {
+  transition: transform 0.3s ease;
+}
+
+.group:hover .fa-arrow-down {
+  transform: translateY(5px) !important;
+}
+
+/* 社交链接样式 */
+.social-contacts {
+  padding: 8px 24px;
+  background-color: rgba(211, 211, 211, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-contact-item {
+  margin: 0 6px;
+}
+
+.social-contact-item a {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.social-contact-item a:hover {
+  color: var(--primary-color);
+}
+
+/* 文章列表样式 */
+.home-article-thumbnail img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.home-article-thumbnail:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.home-article-content {
+  color: var(--second-text-color);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 标签和分类样式 */
+.home-article-category a,
+.home-article-tag a {
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.home-article-category a:hover,
+.home-article-tag a:hover {
+  background-color: var(--primary-color-op-0-1);
+}

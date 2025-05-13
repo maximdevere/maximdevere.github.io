@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect x="0" y="0" width="300" height="80" fill="#2c3e50"/>
+  
+  <!-- 网站标志 -->
+  <text x="20" y="50" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#FFFFFF">
+    DyuShine
+  </text>
+  <text x="170" y="50" font-family="Arial, sans-serif" font-size="36" font-weight="normal" fill="#FFFFFF">
+    's Blog
+  </text>
+</svg> 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect x="0" y="0" width="200" height="160" fill="#2c3e50"/>
+  
+  <!-- Rounded rectangle border -->
+  <rect x="20" y="20" width="160" height="120" rx="15" ry="15" 
+        fill="none" stroke="#8F9CAA" stroke-width="6"/>
+  
+  <!-- Left eye (X) -->
+  <line x1="60" y1="50" x2="80" y2="70" stroke="#8F9CAA" stroke-width="6" stroke-linecap="round"/>
+  <line x1="80" y1="50" x2="60" y2="70" stroke="#8F9CAA" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Right eye (O) -->
+  <circle cx="130" cy="60" r="15" fill="none" stroke="#8F9CAA" stroke-width="6"/>
+  
+  <!-- Sad mouth -->
+  <path d="M70 110 Q100 90 130 110" fill="none" stroke="#8F9CAA" stroke-width="6" stroke-linecap="round"/>
+</svg> 

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 1080" width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- 整体适配博客背景尺寸 -->
+
+  <!-- 淡色背景，适合浅色主题 -->
+  <rect x="0" y="0" width="1920" height="1080" fill="#f8f8f8"/>
+  
+  <!-- 添加抽象网格效果 - 优化适合浅色主题 -->
+  <g opacity="0.07">
+    <path d="M0 120 L1920 120" stroke="#3d7194" stroke-width="1"/>
+    <path d="M0 240 L1920 240" stroke="#3d7194" stroke-width="1"/>
+    <path d="M0 360 L1920 360" stroke="#3d7194" stroke-width="1"/>
+    <path d="M0 480 L1920 480" stroke="#3d7194" stroke-width="1"/>
+    <path d="M0 600 L1920 600" stroke="#3d7194" stroke-width="1"/>
+    <path d="M0 720 L1920 720" stroke="#3d7194" stroke-width="1"/>
+    <path d="M0 840 L1920 840" stroke="#3d7194" stroke-width="1"/>
+    <path d="M0 960 L1920 960" stroke="#3d7194" stroke-width="1"/>
+    
+    <path d="M120 0 L120 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M240 0 L240 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M360 0 L360 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M480 0 L480 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M600 0 L600 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M720 0 L720 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M840 0 L840 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M960 0 L960 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M1080 0 L1080 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M1200 0 L1200 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M1320 0 L1320 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M1440 0 L1440 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M1560 0 L1560 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M1680 0 L1680 1080" stroke="#3d7194" stroke-width="1"/>
+    <path d="M1800 0 L1800 1080" stroke="#3d7194" stroke-width="1"/>
+  </g>
+  
+  <!-- 扭曲的主徽标 - 调整为蓝色系 -->
+  <g transform="translate(500, 270) rotate(-5)">
+    <!-- 扭曲的矩形边框 -->
+    <path d="M20,20 C30,10 250,5 280,20 C300,30 305,180 280,220 C260,245 30,240 20,220 C5,180 5,40 20,20 Z" 
+          fill="none" stroke="#3d7194" stroke-width="6" opacity="0.15"/>
+    
+    <!-- 左眼 (X) - 扭曲 -->
+    <path d="M80,80 C85,75 125,105 130,110" stroke="#3d7194" stroke-width="6" stroke-linecap="round" opacity="0.15"/>
+    <path d="M130,80 C125,75 85,105 80,110" stroke="#3d7194" stroke-width="6" stroke-linecap="round" opacity="0.15"/>
+    
+    <!-- 右眼 (O) - 扭曲 -->
+    <ellipse cx="210" cy="95" rx="25" ry="20" 
+             fill="none" stroke="#3d7194" stroke-width="6" transform="rotate(8)" opacity="0.15"/>
+    
+    <!-- 扭曲的嘴 -->
+    <path d="M110,180 Q155,140 210,180" fill="none" stroke="#3d7194" stroke-width="6" stroke-linecap="round" opacity="0.15"/>
+  </g>
+  
+  <!-- 次级小徽标 - 添加个性 -->
+  <g transform="translate(1300, 600) scale(0.9) rotate(12)">
+    <rect x="20" y="20" width="220" height="160" rx="15" ry="15" 
+          fill="none" stroke="#3d7194" stroke-width="4" opacity="0.1"/>
+    <line x1="80" y1="60" x2="110" y2="90" stroke="#3d7194" stroke-width="4" stroke-linecap="round" opacity="0.1"/>
+    <line x1="110" y1="60" x2="80" y2="90" stroke="#3d7194" stroke-width="4" stroke-linecap="round" opacity="0.1"/>
+    <circle cx="170" cy="75" r="20" fill="none" stroke="#3d7194" stroke-width="4" opacity="0.1"/>
+    <path d="M90 140 Q130 110 180 140" fill="none" stroke="#3d7194" stroke-width="4" stroke-linecap="round" opacity="0.1"/>
+  </g>
+  
+  <!-- 左上角小版本 -->
+  <g transform="translate(150, 180) scale(0.5) rotate(-8)">
+    <rect x="20" y="20" width="180" height="140" rx="15" ry="15" 
+          fill="none" stroke="#3d7194" stroke-width="4" opacity="0.1"/>
+    <line x1="60" y1="50" x2="90" y2="80" stroke="#3d7194" stroke-width="4" stroke-linecap="round" opacity="0.1"/>
+    <line x1="90" y1="50" x2="60" y2="80" stroke="#3d7194" stroke-width="4" stroke-linecap="round" opacity="0.1"/>
+    <circle cx="140" cy="65" r="18" fill="none" stroke="#3d7194" stroke-width="4" opacity="0.1"/>
+    <path d="M70 120 Q105 90 140 120" fill="none" stroke="#3d7194" stroke-width="4" stroke-linecap="round" opacity="0.1"/>
+  </g>
+  
+  <!-- 数字效果 - 点和线 -->
+  <circle cx="430" cy="640" r="3" fill="#3d7194" opacity="0.15"/>
+  <circle cx="1550" cy="230" r="4" fill="#3d7194" opacity="0.15"/>
+  <circle cx="1700" cy="820" r="3" fill="#3d7194" opacity="0.15"/>
+  <circle cx="810" cy="920" r="4" fill="#3d7194" opacity="0.15"/>
+  <circle cx="240" cy="780" r="5" fill="#3d7194" opacity="0.15"/>
+  
+  <!-- 添加一些随机的数字风格线条 -->
+  <path d="M430,640 L500,670" stroke="#3d7194" stroke-width="1" opacity="0.1"/>
+  <path d="M1550,230 L1450,290" stroke="#3d7194" stroke-width="1" opacity="0.1"/>
+  <path d="M1700,820 L1620,880" stroke="#3d7194" stroke-width="1" opacity="0.1"/>
+  <path d="M240,780 L360,760" stroke="#3d7194" stroke-width="1" opacity="0.1"/>
+  
+  <!-- 添加一点故障效果 -->
+  <rect x="510" y="285" width="220" height="5" fill="#3d7194" opacity="0.07"/>
+  <rect x="540" y="435" width="180" height="3" fill="#3d7194" opacity="0.07"/>
+  
+  <!-- 底部渐变效果 -->
+  <path d="M0,1080 C400,950 800,1020 1200,950 C1600,880 1920,950 1920,1080 L0,1080 Z" fill="#3d7194" opacity="0.05"/>
+</svg> 
