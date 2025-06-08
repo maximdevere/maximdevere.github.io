@@ -69,9 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 扩散效果数组
   const pulses = [];
 
-  // 粒子配置
+  // 粒子配置 - 主要优化点1：减少粒子数量
   const particles = [];
-  const particleCount = 100;
+  const particleCount = 30; // 从100减少到30
   const particleColor = '#24c6dc'; // 蓝色调
   const particleSecondaryColor = '#514a9d'; // 紫色调
   const maxRadius = 5;
@@ -145,20 +145,20 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.globalAlpha = p.alpha;
       ctx.fill();
       
-      // 绘制粒子间的连线
-      for (let j = i + 1; j < particles.length; j++) {
+      // 主要优化点2：减少连线计算，只计算部分粒子间的连线
+      for (let j = i + 1; j < Math.min(i + 5, particles.length); j++) { // 限制每个粒子最多连接5个其他粒子
         const p2 = particles[j];
         const dx = p.x - p2.x;
         const dy = p.y - p2.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         
-        if (dist < 100) {
+        if (dist < 80) { // 主要优化点3：减少连线距离从100到80
           // 创建渐变连线
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
           ctx.strokeStyle = p.color;
-          ctx.globalAlpha = 0.2 * (1 - dist / 100);
+          ctx.globalAlpha = 0.2 * (1 - dist / 80);
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -184,8 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.lineWidth = 2;
       ctx.stroke();
       
-      // 画一条连接线
-      if (Math.random() > 0.7) {
+      // 主要优化点4：减少随机连线的生成概率
+      if (Math.random() > 0.9) { // 从0.7提高到0.9，减少连线生成
         const angle = Math.random() * Math.PI * 2;
         const distance = pulse.radius * 0.8;
         const endX = pulse.x + Math.cos(angle) * distance;
@@ -204,4 +204,4 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // 启动动画
   animate();
-}); 
+});
