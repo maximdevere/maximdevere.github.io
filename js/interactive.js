@@ -77,9 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 扩散效果数组
   const pulses = [];
 
-  // 粒子配置 - 恢复原来的粒子数量
+  // 粒子配置 - 适中的粒子数量
   const particles = [];
-  const particleCount = 100; // 恢复到原来的100个
+  const particleCount = 30; // 设置为30个，平衡性能和视觉效果
   const particleColor = '#24c6dc'; // 蓝色调
   const particleSecondaryColor = '#514a9d'; // 紫色调
   const maxRadius = 5;
