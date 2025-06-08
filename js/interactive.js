@@ -23,11 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
   let mouseY = height / 2;
   let isActive = false;
 
-  // 监听鼠标移动事件
+  // 节流变量
+  let lastMouseUpdate = 0;
+  
+  // 监听鼠标移动事件 - 添加节流优化
   document.addEventListener('mousemove', (e) => {
+    const now = Date.now();
+    // 限制鼠标事件处理频率为每50ms一次
+    if (now - lastMouseUpdate < 50) return;
+    
     mouseX = e.clientX;
     mouseY = e.clientY;
     isActive = true;
+    lastMouseUpdate = now;
     
     // 添加鼠标点击时的扩散效果
     if (e.buttons === 1) {
@@ -69,9 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 扩散效果数组
   const pulses = [];
 
-  // 粒子配置 - 主要优化点1：减少粒子数量
+  // 粒子配置 - 恢复原来的粒子数量
   const particles = [];
-  const particleCount = 15; // 从30进一步减少到15
+  const particleCount = 100; // 恢复到原来的100个
   const particleColor = '#24c6dc'; // 蓝色调
   const particleSecondaryColor = '#514a9d'; // 紫色调
   const maxRadius = 5;
@@ -109,18 +117,19 @@ document.addEventListener('DOMContentLoaded', () => {
         p.alpha = Math.max(0.1, Math.min(0.8, p.alpha));
       }
       
-      // 检查鼠标活跃状态
+      // 检查鼠标活跃状态 - 优化距离计算
       if (isActive) {
-        // 计算粒子与鼠标的距离
+        // 计算粒子与鼠标的距离 - 使用快速距离计算
         const dx = p.x - mouseX;
         const dy = p.y - mouseY;
-        const dist = Math.sqrt(dx * dx + dy * dy);
+        const distSq = dx * dx + dy * dy; // 使用距离的平方，避免开方运算
         
-        // 鼠标排斥力
-        if (dist < 100) {
+        // 鼠标排斥力 - 优化判断条件
+        if (distSq < 10000) { // 100*100 = 10000，避免Math.sqrt
+          const dist = Math.sqrt(distSq); // 只在需要时才开方
           const force = (100 - dist) / 15;
-          p.vx += (dx / dist) * force * 0.2;
-          p.vy += (dy / dist) * force * 0.2;
+          p.vx += (dx / dist) * force * 0.15; // 减少力的强度
+          p.vy += (dy / dist) * force * 0.15;
         }
       }
       
@@ -145,20 +154,20 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.globalAlpha = p.alpha;
       ctx.fill();
       
-      // 主要优化点2：减少连线计算，只计算部分粒子间的连线
-      for (let j = i + 1; j < Math.min(i + 5, particles.length); j++) { // 限制每个粒子最多连接5个其他粒子
+      // 绘制粒子间的连线 - 恢复完整连线
+      for (let j = i + 1; j < particles.length; j++) {
         const p2 = particles[j];
         const dx = p.x - p2.x;
         const dy = p.y - p2.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         
-        if (dist < 80) { // 主要优化点3：减少连线距离从100到80
+        if (dist < 100) {
           // 创建渐变连线
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
           ctx.strokeStyle = p.color;
-          ctx.globalAlpha = 0.2 * (1 - dist / 80);
+          ctx.globalAlpha = 0.2 * (1 - dist / 100);
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -184,8 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.lineWidth = 2;
       ctx.stroke();
       
-      // 主要优化点4：减少随机连线的生成概率
-      if (Math.random() > 0.9) { // 从0.7提高到0.9，减少连线生成
+      // 恢复原来的扩散连线生成概率
+      if (Math.random() > 0.7) {
         const angle = Math.random() * Math.PI * 2;
         const distance = pulse.radius * 0.8;
         const endX = pulse.x + Math.cos(angle) * distance;
