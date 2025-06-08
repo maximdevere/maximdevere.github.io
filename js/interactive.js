@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // 根据浏览器调整参数
   const config = isChrome ? {
-    particles: 30,
+    particles: 10,
     connections: 100,
     mouseThrottle: 33,
     effects: true,
