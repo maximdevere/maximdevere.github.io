@@ -1,4 +1,52 @@
-document.addEventListener('DOMContentLoaded', () => {
+// 更准确的GPU性能检测
+  let performanceLevel = detectGPUPerformance();
+  
+  function detectGPUPerformance() {
+    // 创建临时canvas进行GPU性能测试
+    const testCanvas = document.createElement('canvas');
+    testCanvas.width = 200;
+    testCanvas.height = 200;
+    const testCtx = testCanvas.getContext('2d');
+    
+    // 测试大量绘制操作的性能
+    const start = performance.now();
+    
+    // 模拟复杂的Canvas绘制操作
+    for (let i = 0; i < 1000; i++) {
+      testCtx.beginPath();
+      testCtx.arc(Math.random() * 200, Math.random() * 200, Math.random() * 10, 0, Math.PI * 2);
+      testCtx.fillStyle = `hsl(${Math.random() * 360}, 50%, 50%)`;
+      testCtx.fill();
+      
+      // 绘制线条
+      testCtx.beginPath();
+      testCtx.moveTo(Math.random() * 200, Math.random() * 200);
+      testCtx.lineTo(Math.random() * 200, Math.random() * 200);
+      testCtx.strokeStyle = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.5)`;
+      testCtx.stroke();
+    }
+    
+    const elapsed = performance.now() - start;
+    
+    // 检查WebGL支持
+    const webglSupported = (() => {
+      try {
+        const canvas = document.createElement('canvas');
+        return !!(canvas.getContext('webgl') || canvas.getContext('experimental-webgl'));
+      } catch (e) {
+        return false;
+      }
+    })();
+    
+    // 检查硬件加速
+    const hardwareAccelerated = (() => {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      return ctx.getContextAttributes ? ctx.getContextAttributes().antialias : true;
+    })();
+    
+    // 综合判断
+    if (webglSupported &&document.addEventListener('DOMContentLoaded', () => {
   // 创建交互式画布
   const canvas = document.createElement('canvas');
   canvas.style.position = 'fixed';
@@ -100,28 +148,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const currentConfig = config[performanceLevel];
 
-  // 粒子配置 - 统一30个粒子
+  // 粒子配置 - 用户选择后动态设置
   const particles = [];
-  const particleCount = currentConfig.particles;
-  const particleColor = '#24c6dc'; // 蓝色调
-  const particleSecondaryColor = '#514a9d'; // 紫色调
+  const particleColor = '#24c6dc';
+  const particleSecondaryColor = '#514a9d';
   const maxRadius = 5;
   
-  // 创建粒子
-  for (let i = 0; i < particleCount; i++) {
-    particles.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      radius: Math.random() * maxRadius + 1,
-      vx: (Math.random() - 0.5) * 2,
-      vy: (Math.random() - 0.5) * 2,
-      color: Math.random() > 0.5 ? particleColor : particleSecondaryColor,
-      alpha: Math.random() * 0.5 + 0.2,
-      // 添加闪烁效果
-      blink: Math.random() > 0.9,
-      blinkSpeed: Math.random() * 0.05 + 0.01
-    });
-  }
+  // 创建粒子函数将在模式选择后调用
 
   // 动画函数
   function animate() {
