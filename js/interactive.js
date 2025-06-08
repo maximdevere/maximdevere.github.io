@@ -94,8 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // 根据性能调整参数
   const config = {
-    high: { particles: 30, connections: 100, mouseThrottle: 33, effects: true },    // 30个粒子，保留特效
-    low: { particles: 30, connections: 100, mouseThrottle: 50, effects: false }     // 30个粒子，无特效
+    high: { particles: 30, connections: 100, mouseThrottle: 33, effects: true, speedMultiplier: 0.33 },    // 30个粒子，保留特效，速度降到三分之一
+    low: { particles: 0, connections: 0, mouseThrottle: 16, effects: false, speedMultiplier: 1 }           // 无粒子，鼠标正常
   };
   
   const currentConfig = config[performanceLevel];
@@ -130,71 +130,73 @@ document.addEventListener('DOMContentLoaded', () => {
     // 清除画布
     ctx.clearRect(0, 0, width, height);
     
-    // 更新和绘制粒子
-    for (let i = 0; i < particles.length; i++) {
-      const p = particles[i];
-      
-      // 闪烁效果 - 根据性能等级决定是否启用
-      if (p.blink && currentConfig.effects) {
-        p.alpha += Math.sin(Date.now() * p.blinkSpeed) * 0.05;
-        p.alpha = Math.max(0.1, Math.min(0.8, p.alpha));
-      }
-      
-      // 检查鼠标活跃状态 - 根据性能决定是否启用鼠标交互
-      if (isActive && currentConfig.effects) {
-        // 计算粒子与鼠标的距离 - 使用快速距离计算
-        const dx = p.x - mouseX;
-        const dy = p.y - mouseY;
-        const distSq = dx * dx + dy * dy; // 使用距离的平方，避免开方运算
+    // 更新和绘制粒子 - 仅在有粒子时执行
+    if (currentConfig.particles > 0) {
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
         
-        // 鼠标排斥力 - 优化判断条件
-        if (distSq < 10000) { // 100*100 = 10000，避免Math.sqrt
-          const dist = Math.sqrt(distSq); // 只在需要时才开方
-          const force = (100 - dist) / 15;
-          p.vx += (dx / dist) * force * 0.15; // 减少力的强度
-          p.vy += (dy / dist) * force * 0.15;
+        // 闪烁效果 - 根据性能等级决定是否启用
+        if (p.blink && currentConfig.effects) {
+          p.alpha += Math.sin(Date.now() * p.blinkSpeed) * 0.05;
+          p.alpha = Math.max(0.1, Math.min(0.8, p.alpha));
         }
-      }
-      
-      // 限制速度
-      p.vx = Math.min(3, Math.max(-3, p.vx));
-      p.vy = Math.min(3, Math.max(-3, p.vy));
-      
-      // 更新位置
-      p.x += p.vx;
-      p.y += p.vy;
-      
-      // 边界检查，从另一侧重新进入
-      if (p.x < 0) p.x = width;
-      if (p.x > width) p.x = 0;
-      if (p.y < 0) p.y = height;
-      if (p.y > height) p.y = 0;
-      
-      // 绘制粒子
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false);
-      ctx.fillStyle = p.color;
-      ctx.globalAlpha = p.alpha;
-      ctx.fill();
-      
-      // 绘制粒子间的连线 - 根据性能决定是否显示连线
-      if (currentConfig.effects) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const dx = p.x - p2.x;
-          const dy = p.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        // 检查鼠标活跃状态 - 根据性能决定是否启用鼠标交互
+        if (isActive && currentConfig.effects) {
+          // 计算粒子与鼠标的距离 - 使用快速距离计算
+          const dx = p.x - mouseX;
+          const dy = p.y - mouseY;
+          const distSq = dx * dx + dy * dy; // 使用距离的平方，避免开方运算
           
-          // 自适应连线距离
-          if (dist < currentConfig.connections) {
-            // 创建渐变连线
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = p.color;
-            ctx.globalAlpha = 0.2 * (1 - dist / currentConfig.connections);
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
+          // 鼠标排斥力 - 优化判断条件
+          if (distSq < 10000) { // 100*100 = 10000，避免Math.sqrt
+            const dist = Math.sqrt(distSq); // 只在需要时才开方
+            const force = (100 - dist) / 15;
+            p.vx += (dx / dist) * force * 0.15; // 减少力的强度
+            p.vy += (dy / dist) * force * 0.15;
+          }
+        }
+        
+        // 限制速度
+        p.vx = Math.min(3, Math.max(-3, p.vx));
+        p.vy = Math.min(3, Math.max(-3, p.vy));
+        
+        // 更新位置 - 根据性能调整速度
+        p.x += p.vx * currentConfig.speedMultiplier;
+        p.y += p.vy * currentConfig.speedMultiplier;
+        
+        // 边界检查，从另一侧重新进入
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+        
+        // 绘制粒子
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.alpha;
+        ctx.fill();
+        
+        // 绘制粒子间的连线 - 根据性能决定是否显示连线
+        if (currentConfig.effects) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dx = p.x - p2.x;
+            const dy = p.y - p2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            
+            // 自适应连线距离
+            if (dist < currentConfig.connections) {
+              // 创建渐变连线
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = p.color;
+              ctx.globalAlpha = 0.2 * (1 - dist / currentConfig.connections);
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
           }
         }
       }
