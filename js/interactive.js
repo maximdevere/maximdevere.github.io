@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // 节流变量
   let lastMouseUpdate = 0;
   
-  // 监听鼠标移动事件 - 添加节流优化
+  // 监听鼠标移动事件 - 自适应节流优化
   document.addEventListener('mousemove', (e) => {
     const now = Date.now();
-    // 限制鼠标事件处理频率为每50ms一次
-    if (now - lastMouseUpdate < 50) return;
+    // 根据性能调整节流时间
+    if (now - lastMouseUpdate < currentConfig.mouseThrottle) return;
     
     mouseX = e.clientX;
     mouseY = e.clientY;
@@ -77,9 +77,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // 扩散效果数组
   const pulses = [];
 
-  // 粒子配置 - 适中的粒子数量
+  // 性能检测和自适应配置
+  let performanceLevel = detectPerformance();
+  
+  function detectPerformance() {
+    // 简单的性能检测
+    const start = performance.now();
+    for(let i = 0; i < 100000; i++) {
+      Math.random() * Math.random();
+    }
+    const elapsed = performance.now() - start;
+    
+    if (elapsed < 10) return 'high';      // 高性能
+    if (elapsed < 30) return 'medium';    // 中等性能
+    return 'low';                         // 低性能
+  }
+  
+  // 根据性能调整参数
+  const config = {
+    high: { particles: 60, connections: 120, mouseThrottle: 16 },     // 60fps
+    medium: { particles: 30, connections: 80, mouseThrottle: 33 },    // 30fps  
+    low: { particles: 15, connections: 50, mouseThrottle: 50 }        // 20fps
+  };
+  
+  const currentConfig = config[performanceLevel];
+
+  // 粒子配置 - 自适应粒子数量
   const particles = [];
-  const particleCount = 30; // 设置为30个，平衡性能和视觉效果
+  const particleCount = currentConfig.particles;
   const particleColor = '#24c6dc'; // 蓝色调
   const particleSecondaryColor = '#514a9d'; // 紫色调
   const maxRadius = 5;
@@ -161,13 +186,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const dy = p.y - p2.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         
-        if (dist < 100) {
+        // 自适应连线距离
+        if (dist < currentConfig.connections) {
           // 创建渐变连线
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
           ctx.strokeStyle = p.color;
-          ctx.globalAlpha = 0.2 * (1 - dist / 100);
+          ctx.globalAlpha = 0.2 * (1 - dist / currentConfig.connections);
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
