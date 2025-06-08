@@ -88,21 +88,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const elapsed = performance.now() - start;
     
-    if (elapsed < 10) return 'high';      // 高性能
-    if (elapsed < 30) return 'medium';    // 中等性能
+    if (elapsed < 20) return 'high';      // 高性能
     return 'low';                         // 低性能
   }
   
   // 根据性能调整参数
   const config = {
-    high: { particles: 60, connections: 120, mouseThrottle: 16 },     // 60fps
-    medium: { particles: 30, connections: 80, mouseThrottle: 33 },    // 30fps  
-    low: { particles: 15, connections: 50, mouseThrottle: 50 }        // 20fps
+    high: { particles: 30, connections: 100, mouseThrottle: 33, effects: true },    // 30个粒子，保留特效
+    low: { particles: 30, connections: 100, mouseThrottle: 50, effects: false }     // 30个粒子，无特效
   };
   
   const currentConfig = config[performanceLevel];
 
-  // 粒子配置 - 自适应粒子数量
+  // 粒子配置 - 统一30个粒子
   const particles = [];
   const particleCount = currentConfig.particles;
   const particleColor = '#24c6dc'; // 蓝色调
@@ -136,14 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
       
-      // 闪烁效果
-      if (p.blink) {
+      // 闪烁效果 - 根据性能等级决定是否启用
+      if (p.blink && currentConfig.effects) {
         p.alpha += Math.sin(Date.now() * p.blinkSpeed) * 0.05;
         p.alpha = Math.max(0.1, Math.min(0.8, p.alpha));
       }
       
-      // 检查鼠标活跃状态 - 优化距离计算
-      if (isActive) {
+      // 检查鼠标活跃状态 - 根据性能决定是否启用鼠标交互
+      if (isActive && currentConfig.effects) {
         // 计算粒子与鼠标的距离 - 使用快速距离计算
         const dx = p.x - mouseX;
         const dy = p.y - mouseY;
@@ -179,60 +177,64 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.globalAlpha = p.alpha;
       ctx.fill();
       
-      // 绘制粒子间的连线 - 恢复完整连线
-      for (let j = i + 1; j < particles.length; j++) {
-        const p2 = particles[j];
-        const dx = p.x - p2.x;
-        const dy = p.y - p2.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        
-        // 自适应连线距离
-        if (dist < currentConfig.connections) {
-          // 创建渐变连线
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = p.color;
-          ctx.globalAlpha = 0.2 * (1 - dist / currentConfig.connections);
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
+      // 绘制粒子间的连线 - 根据性能决定是否显示连线
+      if (currentConfig.effects) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = p.x - p2.x;
+          const dy = p.y - p2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          
+          // 自适应连线距离
+          if (dist < currentConfig.connections) {
+            // 创建渐变连线
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = p.color;
+            ctx.globalAlpha = 0.2 * (1 - dist / currentConfig.connections);
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
         }
       }
     }
     
-    // 更新和绘制扩散效果
-    for (let i = pulses.length - 1; i >= 0; i--) {
-      const pulse = pulses[i];
-      
-      pulse.radius += pulse.speed;
-      pulse.alpha -= 0.02;
-      
-      if (pulse.alpha <= 0) {
-        pulses.splice(i, 1);
-        continue;
-      }
-      
-      ctx.beginPath();
-      ctx.arc(pulse.x, pulse.y, pulse.radius, 0, Math.PI * 2, false);
-      ctx.strokeStyle = pulse.color;
-      ctx.globalAlpha = pulse.alpha;
-      ctx.lineWidth = 2;
-      ctx.stroke();
-      
-      // 恢复原来的扩散连线生成概率
-      if (Math.random() > 0.7) {
-        const angle = Math.random() * Math.PI * 2;
-        const distance = pulse.radius * 0.8;
-        const endX = pulse.x + Math.cos(angle) * distance;
-        const endY = pulse.y + Math.sin(angle) * distance;
+    // 更新和绘制扩散效果 - 仅在高性能设备上显示
+    if (currentConfig.effects) {
+      for (let i = pulses.length - 1; i >= 0; i--) {
+        const pulse = pulses[i];
+        
+        pulse.radius += pulse.speed;
+        pulse.alpha -= 0.02;
+        
+        if (pulse.alpha <= 0) {
+          pulses.splice(i, 1);
+          continue;
+        }
         
         ctx.beginPath();
-        ctx.moveTo(pulse.x, pulse.y);
-        ctx.lineTo(endX, endY);
-        ctx.strokeStyle = '#005080';
-        ctx.globalAlpha = pulse.alpha * 0.7;
-        ctx.lineWidth = 0.5;
+        ctx.arc(pulse.x, pulse.y, pulse.radius, 0, Math.PI * 2, false);
+        ctx.strokeStyle = pulse.color;
+        ctx.globalAlpha = pulse.alpha;
+        ctx.lineWidth = 2;
         ctx.stroke();
+        
+        // 恢复原来的扩散连线生成概率
+        if (Math.random() > 0.7) {
+          const angle = Math.random() * Math.PI * 2;
+          const distance = pulse.radius * 0.8;
+          const endX = pulse.x + Math.cos(angle) * distance;
+          const endY = pulse.y + Math.sin(angle) * distance;
+          
+          ctx.beginPath();
+          ctx.moveTo(pulse.x, pulse.y);
+          ctx.lineTo(endX, endY);
+          ctx.strokeStyle = '#005080';
+          ctx.globalAlpha = pulse.alpha * 0.7;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
       }
     }
   }
