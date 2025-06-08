@@ -51,13 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
     connections: 100,
     mouseThrottle: 33,
     effects: true,
-    speedMultiplier: 0.33
+    speedMultiplier: 0.33  // Chrome: 速度三分之一
   } : {
     particles: 0,
     connections: 0,
     mouseThrottle: 16,
     effects: false,
-    speedMultiplier: 1
+    speedMultiplier: 0.33  // 其他浏览器也改成三分之一（虽然没有粒子）
   };
 
   // 监听鼠标移动事件
